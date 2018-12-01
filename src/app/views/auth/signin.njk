@@ -1,0 +1,15 @@
+{% extends "_layouts/auth.njk" %}
+
+{% block body %}
+  <form action="/signin" method="post" >
+
+    <img src="/images/logo.svg" height="42" alt="Logo GoBarber" />
+
+    <input type="email" name="email" id="email" placeholder="Seu e-mail" />
+    <input type="password" name="password" id="password" placeholder="Sua senha" />
+
+    <button type="submit">Entrar</button>
+
+    <a href="/signup">Criar uma nova conta</a>
+  </form>
+{% endblock %}
