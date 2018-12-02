@@ -2,9 +2,13 @@ const { User } = require('../models')
 
 class DashboardController {
   async index (req, res) {
+    if (req.session.user.provider === true) {
+      return res.redirect('/app/provider')
+    }
+
     const providers = await User.findAll({ where: { provider: true } })
 
-    res.render('dashboard', { providers })
+    return res.render('dashboard', { providers })
   }
 }
 

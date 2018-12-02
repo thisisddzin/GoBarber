@@ -1,0 +1,23 @@
+{% extends "_layouts/default.njk" %}
+
+{% block body %}
+
+<div class="content">
+<strong>Bem vindo, {{ userSession.name }}</strong>
+<p>Confira seus agendamentos abaixo: </p>
+
+<ul class="providers">
+  {% for client in clients %}
+    <li class="provider">
+      <div>
+        <img src="/files/{{client.user.avatar}}" alt="Avatar do usuário">
+        <strong>{{client.user.name}}</strong>
+        <strong>{{client.date.getDate()}}/{{client.date.getMonth()+1}}/{{client.date.getFullYear()}} {{client.date.getHours()}}:00</strong>
+      </div>
+    </li>
+  {% endfor %}
+</ul>
+
+<a href="/app/logout" class="logout" >Sair</a>
+</div>
+{% endblock %}

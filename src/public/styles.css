@@ -68,6 +68,7 @@ body {
 }
 
 .auth-wrapper form label[for="avatar"] {
+  flex-shrink: 0;
   width: 80px;
   height: 80px;
   background: #eee;
@@ -191,6 +192,7 @@ ul.providers {
 }
 
 .provider {
+  flex-shrink: 0;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 4px;
