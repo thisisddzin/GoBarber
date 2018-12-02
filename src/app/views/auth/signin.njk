@@ -2,8 +2,9 @@
 
 {% block body %}
   <form action="/signin" method="post" >
-
     <img src="/images/logo.svg" height="42" alt="Logo GoBarber" />
+
+    {% include '_partials/flash.njk' %}
 
     <input type="email" name="email" id="email" placeholder="Seu e-mail" />
     <input type="password" name="password" id="password" placeholder="Sua senha" />

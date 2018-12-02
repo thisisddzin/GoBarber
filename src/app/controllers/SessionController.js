@@ -12,11 +12,13 @@ class SessionController {
 
     if (!user) {
       console.log('E-mail inexistente, tente novamente.')
+      req.flash('error', 'E-mail incorreto, tente novamente.')
       return res.redirect('/')
     }
 
     if (!(await user.checkPassword(password))) {
       console.log('Senha incorreta, tente novamente.')
+      req.flash('error', 'Senha incorreta, tente novamente.')
       return res.redirect('/')
     }
 
@@ -25,6 +27,13 @@ class SessionController {
     console.log('logado com sucesso')
 
     return res.redirect('/app/dashboard')
+  }
+
+  destroy (req, res) {
+    req.session.destroy(() => {
+      res.clearCookie('root')
+      return res.redirect('/')
+    })
   }
 }
 
