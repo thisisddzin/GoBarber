@@ -3,7 +3,7 @@
 Sistema de agendamento de serviços em barbearia.
 
 - Módulo 2 de NodeJs do Bootcamp da plataforma Rocketseat.
-  (Com desafio.)
+  (Com desafio)
 
 Funcionalidades:
 
@@ -27,7 +27,9 @@ Bibliotecas e dependências utilizadas na aplicação:
 - "pg": "^7.7.1",
 - "sequelize": "^4.41.2"
   },
-  "devDependencies": {
+
+"devDependencies": {
+
 - "eslint": "^5.9.0",
 - "eslint-config-standard": "^12.0.0",
 - "eslint-plugin-import": "^2.14.0",
