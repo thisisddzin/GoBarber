@@ -11,6 +11,11 @@ Funcionalidades:
 - O cliente pode agendar seu atendimento nos dias e horários disponíveis.
 - O provedor ao logar entra em seu dashboard e pode visualizar todos seus agendamentos.
 
+Features:
+
+- Adicionado impedimento de agendamento aos domingos com mensagem amigável ao cliente.
+- Adicionado botão de cancelamento de agendamento em data específica pelo provedor.
+
 Bibliotecas e dependências utilizadas na aplicação:
 
 "dependencies": {
