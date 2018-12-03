@@ -14,6 +14,7 @@
         <strong>{{client.user.name}}</strong>
         <strong>{{client.date.getDate()}}/{{client.date.getMonth()+1}}/{{client.date.getFullYear()}} {{client.date.getHours()}}:00</strong>
       </div>
+      <a title="Cancelar agendamento do usuário {{client.id}}" style="background-color:red;" href="/app/provider/cancel/?id={{client.id}}">-</a>
     </li>
   {% endfor %}
 </ul>

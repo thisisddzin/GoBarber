@@ -1,3 +1,8 @@
+
+{% if dateSunday %}
+  <strong style="color:red">Não trabalhamos no domingo. Escolha outro dia! :D</strong>
+{% endif %}
+
 {% for hour in available %}
 
   <label class="{% if hour.available === false %}disabled{% endif %}" for="time-{{ hour.time }}">

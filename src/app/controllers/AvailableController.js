@@ -6,6 +6,8 @@ class AvailableController {
   async index (req, res) {
     const date = moment(parseInt(req.query.date))
 
+    const dateSunday = date.format('dddd') === 'Sunday'
+
     const appointments = await Appointment.findAll({
       where: {
         provider_id: req.params.provider,
@@ -17,7 +19,6 @@ class AvailableController {
         }
       }
     })
-
     const schedule = [
       '08:00',
       '09:00',
@@ -45,11 +46,12 @@ class AvailableController {
         value: value.format(),
         available:
           value.isAfter(moment()) &&
-          !appointments.find(a => moment(a.date).format('HH:mm') === time)
+          !appointments.find(a => moment(a.date).format('HH:mm') === time) &&
+          moment(date).format('dddd') !== 'Sunday'
       }
     })
 
-    return res.render('available/index', { available })
+    return res.render('available/index', { available, dateSunday })
   }
 }
 

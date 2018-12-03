@@ -6,6 +6,10 @@
   transition: all 0.3s;
 }
 
+img {
+  flex-shrink: 0;
+}
+
 html,
 body {
   height: 100%;

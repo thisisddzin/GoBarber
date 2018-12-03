@@ -13,10 +13,21 @@ class DashProvider {
         date: {
           [Op.gt]: moment()
         }
-      }
+      },
+      order: [['date', 'ASC']]
     })
 
     res.render('provider', { userSession, clients })
+  }
+
+  cancel (req, res) {
+    Appointment.destroy({
+      where: {
+        id: req.query.id
+      }
+    })
+
+    res.redirect('/provider/refresh')
   }
 }
 
